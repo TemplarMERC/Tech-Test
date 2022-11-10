@@ -15,7 +15,7 @@ describe('This is going to test the petstore api user section', () => {
         }
     }).then( response => {
         expect(response.status).to.eq(200);
-        expect(response.body.message).to.eq("109238")
+        expect(response.body.message).to.eq("109238");
     });
   })
   it('Will get the created user and test the repsonse', () => {
@@ -31,7 +31,7 @@ describe('This is going to test the petstore api user section', () => {
         expect(response.body.email).to.eq('David@test.com');
         expect(response.body.password).to.eq('password');
         expect(response.body.phone).to.eq('00000000000');
-        expect(response.body.userStatus).to.eq(0)
+        expect(response.body.userStatus).to.eq(0);
     })
   })
   it('Will update the created user and test the response and also get the user to make sure the updates we actually made', () => {
@@ -63,7 +63,7 @@ describe('This is going to test the petstore api user section', () => {
         expect(response.body.email).to.eq('David@test.com');
         expect(response.body.password).to.eq('password1');
         expect(response.body.phone).to.eq('00000000001');
-        expect(response.body.userStatus).to.eq(0)
+        expect(response.body.userStatus).to.eq(0);
     });
   });
   it('Will delete the created user and test the response while also getting the user to make sure it has been deleted', () => {
@@ -119,8 +119,8 @@ describe('This will test the petstore api pet section', () => {
         method: 'GET',
         url: 'https://petstore.swagger.io/v2/pet/13',
     }).then( response => {
-        expect(response.status).to.eq(200)
-        expect(response.body.id).to.eq(13)
+        expect(response.status).to.eq(200);
+        expect(response.body.id).to.eq(13);
         expect(response.body.name).to.eq('buddy');
         expect(response.body.photoUrls[0]).to.eq('string')
         expect(response.body.tags[0].id).to.eq(0);
@@ -148,10 +148,10 @@ describe('This will test the petstore api pet section', () => {
             status: 'available'  
         }
     }).then( response => {
-        expect(response.status).to.eq(200)
-        expect(response.body.id).to.eq(13)
+        expect(response.status).to.eq(200);
+        expect(response.body.id).to.eq(13);
         expect(response.body.name).to.eq('buddy');
-        expect(response.body.photoUrls[0]).to.eq('is a good boy')
+        expect(response.body.photoUrls[0]).to.eq('is a good boy');
         expect(response.body.tags[0].id).to.eq(0);
         expect(response.body.tags[0].name).to.eq('string');
     })
@@ -162,14 +162,14 @@ describe('This will test the petstore api pet section', () => {
         url: 'https://petstore.swagger.io/v2/pet/13',
     }).then( response => {
         expect(response.status).to.eq(200);
-        expect(response.body.message).to.eq('13')
+        expect(response.body.message).to.eq('13');
     });
     cy.request({
         method: 'GET',
         url: 'https://petstore.swagger.io/v2/pet/13',
         failOnStatusCode: false
     }).then( response => {
-        expect(response.status).to.eq(404)
+        expect(response.status).to.eq(404);
         expect(response.body.message).to.eq('Pet not found');
     });
   });
