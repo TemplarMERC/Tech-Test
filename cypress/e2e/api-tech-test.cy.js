@@ -13,7 +13,6 @@ describe('This is going to test the petstore api user section', () => {
             phone: "00000000000",
             userStatus: 0
         }
-        //i'm not too sure on how much to validate or if there is more I should be validating than the repsponse
     }).then( response => {
         expect(response.status).to.eq(200);
         expect(response.body.message).to.eq("109238")
